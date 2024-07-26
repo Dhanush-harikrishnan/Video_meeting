@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Or Join Meeting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #343a40;
+            padding: 10px 20px;
+            color: #ffffff;
+        }
+        .logo {
+            width: 100px;
+        }
+        .nav-item {
+            list-style: none;
+        }
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        button {
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            will-change: box-shadow, transform;
+            background: radial-gradient(100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100%);
+            box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+            padding: 0 2em;
+            border-radius: 0.3em;
+            color: #fff;
+            height: 2.6em;
+            margin-right: 20px;
+            text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+            transition: box-shadow 0.15s ease, transform 0.15s ease;
+        }
+        
+        /* Hover state for button */
+        button:hover {
+            box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
+            transform: translateY(-0.1em);
+        }
+        
+        /* Active state for button */
+        button:active {
+            box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
+            transform: translateY(0em);
+        }
+        
+        button .material-icons {
+            font-size: 24px; 
+            margin-right: 8px; 
+            vertical-align: middle;
+        }
+    
+        button span {
+            margin-left: 8px; 
+        }
+        .display-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main {
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .btn-lg {
+            padding: 15px 30px;
+            font-size: 18px;
+        }
+        .form-inline {
+            display: flex;
+            align-items: center;
+        }
+        .enter-code {
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+        }
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .learn-more {
+            color: #17a2b8;
+            text-decoration: none;
+        }
+        .learn-more:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-item {
+                margin-bottom: 10px;
+            }
+            .container {
+                padding: 10px;
+                flex-direction: column;
+            }
+        }
+        .input {
+            border: none;
+            outline: none;
+            border-radius: 15px;
+            padding: 1em;
+            background-color: #ccc;
+            box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+            transition: 300ms ease-in-out;
+        }
+        
+        .input:focus {
+            background-color: white;
+            transform: scale(1.05);
+            box-shadow: 13px 13px 100px #969696,
+                       -13px -13px 100px #ffffff;
+        }
+        .text-section {
+            max-width: 600px;
+        }
+        .image-section {
+            max-width: 600px;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-left: 30px;
+        }
+        .image-container {
+            display: flex; 
+            flex-direction: row; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 20px; 
+            padding: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="public/assets/images/logo.png" class="logo" alt="Logo">
+        <a href="#" class="nav-link">Dhanush Meet</a>
+        <div>
+            <ul style="display: flex; justify-content: center; align-items: center;">
+                <li class="nav-item sign-in display-center">
+                    <a href="#" class="nav-link">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-secondary btn-lg text-info font-weight-bold join-meeting">Join the meeting</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-lg btn-info text-light font-weight-bold new-meeting btn-new-meeting">Start a meeting</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main">
+        <div class="container">
+            <div class="text-section">
+                <h1>Video Meeting. Now it is available for free to everyone.</h1>
+                <p>We're redesigning the Spark meet service for secure business meetings and making it free for everyone to use.</p>
+                <ul style="display: flex; list-style: none; padding: 0;">
+                    <li>
+                        <button class="btn btn-lg text-light font-weight-bold new-meeting btn-new-meeting">
+                            <span>New Meeting</span>
+                        </button>
+                    </li>
+                    <li style="margin-bottom: 25px;">
+                        <form action="#" class="form-inline">
+                            <input type="text" placeholder="Enter a code" class="input enter-code">
+                            <button type="button" class="btn btn-lg btn-outline-secondary text-dark font-weight-bold btn-join">
+                                <span class="material-icons mr-2">Join</span>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="image-section">
+                <img src="public/assets/images/google-meet-people.jpg" alt="Google Meet People">
+            </div>
+        </div>
+        <div class="image-container">
+            <div class="image-section">
+                <img src="public/assets/images/google-meet-people.jpg" alt="Google Meet People">
+            </div>
+            <div class="image-section">
+                <img src="public/assets/images/google-meet-people.jpg" alt="Google Meet People">
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <h6>Learn more about <a href="#" class="learn-more">Spark Meeting</a>.</h6>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $(document).on("click", ".join-meeting", function(){
+                $(".enter-code").focus();
+            });
+            $(document).on("click", ".btn-join", function(){
+                var join_value = $('.enter-code').val();
+                var meetingUrl = window.location.origin + "?meetingID=" + join_value;
+                window.location.replace(meetingUrl);
+            });
+            $(document).on("click", ".new-meeting", function(){
+                var eight_d_value = Math.floor(Math.random() * 100000000);
+                var meetingUrl = window.location.origin + "?meetingID=" + eight_d_value;
+                window.location.replace(meetingUrl);
+            });
+        });
+    </script>
+</body>
+</html>
